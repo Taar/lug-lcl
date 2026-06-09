@@ -58,4 +58,6 @@ WORKDIR /home/gnuplususer
 
 RUN sed -i "s/alias ls='ls --color=auto'//" .bashrc
 
+RUN touch diary && chmod u=rw,g=rw,o=rw diary
+
 ENTRYPOINT bash
