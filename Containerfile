@@ -56,4 +56,6 @@ RUN touch diary && \
 USER gnuplususer
 WORKDIR /home/gnuplususer
 
+RUN sed -i "s/alias ls='ls --color=auto'//" .bashrc
+
 ENTRYPOINT bash
