@@ -24,7 +24,6 @@ RUN apt-get -y update && \
         bat \
         neovim \
         vim \
-        tldr-py \
         sudo \
         less \
         eza \
