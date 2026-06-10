@@ -48,16 +48,21 @@ RUN touch /lug/for-lug-group && \
     chmod u=rw,g=rw,o= /lug/for-lug-group && \
     chown lugmember:lug /lug/for-lug-group
 
+COPY --chown=gnuplususer:lug ./Containerfile /lug/Containerfile
+
 USER lugmember
 WORKDIR /home/lugmember
 RUN touch diary && \
-    chmod u=rw,g=,o= diary
+    chmod u=rw,g=,o= diary && \
+    echo 'I did not get a pony for my birthday, AGAIN!' >> diary
 
 USER gnuplususer
 WORKDIR /home/gnuplususer
 
 RUN sed -i "s/alias ls='ls --color=auto'//" .bashrc
 
-RUN touch diary && chmod u=rw,g=rw,o=rw diary
+RUN touch diary && \
+    chmod u=rw,g=rw,o=rw diary && \
+    echo 'hey! this is private!' >> diary
 
 ENTRYPOINT bash
