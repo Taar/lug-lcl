@@ -5,6 +5,10 @@ This is part of a workshop that was hosted at [Hackforge](https://hackf.org) as 
 > [!IMPORTANT]
 > Don't use this container in production environments. It should only be used for educational purposes.
 
+```bash
+podman run -it --rm ghcr.io/taar/lug-lcl
+```
+
 ## Build Container
 
 ```bash
